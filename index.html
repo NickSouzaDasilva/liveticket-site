@@ -5,68 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Live Ticket | Atendimento Omnichannel</title>
   <meta name="description" content="Plataforma de Atendimento Omnichannel - Live Ticket" />
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind FIXO para GitHub Pages -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#2563eb'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <style>
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
+
 <body class="bg-white text-gray-900">
 
+  <!-- HEADER -->
   <header class="bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943198163901cb6155dbb1f/fede1158b_571129084_25350278831244050_8856712991463821764_n.png" class="h-12" />
+        <img
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943198163901cb6155dbb1f/fede1158b_571129084_25350278831244050_8856712991463821764_n.png"
+          class="h-12"
+          alt="Live Ticket"
+        />
         <div>
           <h1 class="text-xl font-bold">Live Ticket</h1>
           <p class="text-xs text-gray-500">Atendimento Omnichannel</p>
         </div>
       </div>
       <nav class="hidden md:flex gap-8">
-        <a href="#sobre" class="text-gray-600 hover:text-blue-600">Sobre</a>
-        <a href="#servicos" class="text-gray-600 hover:text-blue-600">Serviços</a>
-        <a href="#contato" class="text-gray-600 hover:text-blue-600">Contato</a>
+        <a href="#sobre" class="text-gray-600 hover:text-primary">Sobre</a>
+        <a href="#servicos" class="text-gray-600 hover:text-primary">Serviços</a>
+        <a href="#contato" class="text-gray-600 hover:text-primary">Contato</a>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-5xl font-bold mb-6">Plataforma de Atendimento Omnichannel</h2>
-        <p class="text-lg text-gray-600 mb-8">Centralize WhatsApp, Instagram, Messenger, e-mail e outros canais em uma única plataforma.</p>
-        <div class="flex gap-4">
-          <a href="#contato" class="px-6 py-3 bg-blue-600 text-white rounded-lg">Solicitar Demonstração</a>
-          <a href="#servicos" class="px-6 py-3 border rounded-lg">Conhecer Serviços</a>
+        <h2 class="text-5xl font-bold mb-6 leading-tight">
+          Plataforma de Atendimento Omnichannel
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Centralize WhatsApp, Instagram, Messenger, e-mail e outros canais em uma única plataforma.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contato" class="px-6 py-3 bg-primary text-white rounded-lg">
+            Solicitar Demonstração
+          </a>
+          <a href="#servicos" class="px-6 py-3 border rounded-lg">
+            Conhecer Serviços
+          </a>
         </div>
       </div>
-      <img class="rounded-2xl shadow-2xl" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800" />
+
+      <img
+        class="rounded-2xl shadow-2xl w-full"
+        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900"
+        alt="Atendimento Omnichannel"
+      />
     </div>
   </section>
 
+  <!-- SOBRE -->
   <section id="sobre" class="py-20">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h3 class="text-4xl font-bold mb-4">Sobre a Live Ticket</h3>
-      <p class="text-gray-600 max-w-2xl mx-auto">Empresa especializada em soluções modernas de atendimento ao cliente com foco em automação e omnichannel.</p>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Empresa especializada em soluções modernas de atendimento ao cliente,
+        com foco em automação, performance e experiência omnichannel.
+      </p>
     </div>
   </section>
 
+  <!-- SERVIÇOS -->
   <section id="servicos" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
       <h3 class="text-4xl font-bold text-center mb-12">Nossos Serviços</h3>
+
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow">Plataforma Omnichannel completa com WhatsApp Business API</div>
-        <div class="bg-white p-8 rounded-xl shadow">Chatbots e automações inteligentes 24/7</div>
-        <div class="bg-white p-8 rounded-xl shadow">Gestão de equipe, SLA e distribuição de tickets</div>
-        <div class="bg-white p-8 rounded-xl shadow">Relatórios e dashboards estratégicos</div>
+        <div class="bg-white p-8 rounded-xl shadow">
+          Plataforma Omnichannel integrada à WhatsApp Business API
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow">
+          Chatbots e automações inteligentes 24/7
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow">
+          Gestão de equipe, SLA e distribuição automática de tickets
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow">
+          Relatórios e dashboards estratégicos em tempo real
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTATO -->
   <section id="contato" class="py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h3 class="text-4xl font-bold mb-4">Entre em Contato</h3>
-      <p class="text-gray-600 mb-8">Estamos prontos para ajudar sua empresa</p>
-      <a href="mailto:contato@liveticket.com.br" class="px-6 py-3 bg-blue-600 text-white rounded-lg">contato@liveticket.com.br</a>
+      <p class="text-gray-600 mb-8">
+        Estamos prontos para ajudar sua empresa a escalar o atendimento
+      </p>
+      <a
+        href="mailto:contato@liveticket.com.br"
+        class="px-6 py-3 bg-primary text-white rounded-lg"
+      >
+        contato@liveticket.com.br
+      </a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 py-10 text-center">
     <p class="font-semibold">Live Ticket Atendimento Omnichannel</p>
     <p>CNPJ: 64.083.873/0001-98</p>
