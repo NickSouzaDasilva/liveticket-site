@@ -1,461 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Ticket | Atendimento Omnichannel</title>
-  <meta name="description" content="Plataforma de Atendimento Omnichannel - Live Ticket" />
-  <script>
-    tailwind = {
-      config: {
-        theme: {
-          extend: {
-            colors: { primary: '#2563eb' }
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-  <style>
-    html, body { width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-gray-900">
-
-  <!-- HEADER -->
-  <header class="bg-white/90 backdrop-blur border-b border-gray-200 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943198163901cb6155dbb1f/fede1158b_571129084_25350278831244050_8856712991463821764_n.png"
-          class="h-10" alt="Live Ticket" />
-        <div>
-          <h1 class="text-lg font-bold leading-none">Live Ticket</h1>
-          <p class="text-xs text-gray-500">Atendimento Omnichannel</p>
-        </div>
-      </div>
-      <nav class="hidden md:flex items-center gap-7">
-        <a href__="#sobre"    class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Sobre</a>
-        <a href__="#servicos" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Serviços</a>
-        <a href__="#planos"   class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Planos</a>
-        <a href__="#contato"  class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors">Contato</a>
-        <a href__="#planos"   class="px-5 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">Começar Agora</a>
-      </nav>
-      <!-- Mobile menu button -->
-      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
-      <a href__="#sobre"    class="block text-sm font-medium text-gray-600 hover:text-blue-600">Sobre</a>
-      <a href__="#servicos" class="block text-sm font-medium text-gray-600 hover:text-blue-600">Serviços</a>
-      <a href__="#planos"   class="block text-sm font-medium text-gray-600 hover:text-blue-600">Planos</a>
-      <a href__="#contato"  class="block text-sm font-medium text-gray-600 hover:text-blue-600">Contato</a>
-      <a href__="#planos"   class="block text-center px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg">Começar Agora</a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="py-20 lg:py-28 bg-gradient-to-br from-blue-50 via-white to-white">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-      <div>
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-6">
-          ● Plataforma Omnichannel
-        </span>
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-          Todos os seus canais em <span class="text-blue-600">um só lugar</span>
-        </h2>
-        <p class="text-lg text-gray-500 mb-10 leading-relaxed">
-          Centralize WhatsApp, Instagram, Messenger e outros canais em uma única plataforma inteligente de atendimento.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href__="#planos" class="px-7 py-3.5 bg-blue-600 text-white rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
-            Ver Planos →
-          </a>
-          <a href__="#contato" class="px-7 py-3.5 border border-gray-200 rounded-xl font-semibold text-sm text-gray-700 hover:bg-gray-50 transition-colors">
-            Solicitar Demo
-          </a>
-        </div>
-      </div>
-      <img class="rounded-2xl shadow-2xl w-full object-cover"
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900"
-        alt="Atendimento Omnichannel" />
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre" class="py-24">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <p class="text-blue-600 font-semibold text-sm mb-2 tracking-widest uppercase">Sobre nós</p>
-      <h3 class="text-3xl md:text-4xl font-bold mb-4">Sobre a Live Ticket</h3>
-      <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed mb-14">
-        Empresa especializada em soluções modernas de atendimento ao cliente, com foco em automação, performance e experiência omnichannel. Os dados são utilizados exclusivamente para permitir a comunicação entre empresas e seus próprios clientes.
-      </p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-8 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h4 class="font-bold mb-2">Rápido</h4>
-          <p class="text-sm text-gray-500">Atendimento ágil e automatizado para sua equipe</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <h4 class="font-bold mb-2">Seguro</h4>
-          <p class="text-sm text-gray-500">Dados protegidos e criptografados</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <h4 class="font-bold mb-2">Integrado</h4>
-          <p class="text-sm text-gray-500">Todos os canais centralizados em uma tela</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="py-24 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="text-blue-600 font-semibold text-sm mb-2 tracking-widest uppercase">O que oferecemos</p>
-        <h3 class="text-3xl md:text-4xl font-bold">Nossos Serviços</h3>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-200 transition-colors">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </div>
-          <h4 class="text-lg font-bold mb-2">Plataforma Omnichannel</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Integrada à WhatsApp Business API oficial para comunicação segura e confiável.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-200 transition-colors">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          </div>
-          <h4 class="text-lg font-bold mb-2">Fluxos Automatizados</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Automação inteligente e integrações com seus sistemas favoritos.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-200 transition-colors">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </div>
-          <h4 class="text-lg font-bold mb-2">Gestão de Equipe</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">SLA, distribuição automática de tickets e controle completo da equipe.</p>
-        </div>
-        <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-200 transition-colors">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          </div>
-          <h4 class="text-lg font-bold mb-2">Relatórios em Tempo Real</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Dashboards estratégicos com métricas e insights acionáveis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANOS -->
-  <section id="planos" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-14">
-        <p class="text-blue-600 font-semibold text-sm mb-2 tracking-widest uppercase">Preços</p>
-        <h3 class="text-3xl md:text-4xl font-bold mb-4">Escolha o plano ideal</h3>
-        <p class="text-gray-500 max-w-lg mx-auto">Planos flexíveis para cada fase do seu negócio. Comece pequeno e cresça conosco.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
-
-        <!-- PLANO ESSENCIAL -->
-        <div class="rounded-2xl p-8 border border-gray-200 bg-white hover:border-blue-200 hover:shadow-lg transition-all flex flex-col">
-          <div class="mb-6">
-            <h4 class="text-lg font-bold mb-1">Essencial</h4>
-            <p class="text-sm text-gray-500 leading-relaxed">Perfeito para começar com o essencial do atendimento.</p>
-          </div>
-          <div class="mb-8">
-            <span class="text-4xl font-extrabold">R$ 350</span>
-            <span class="text-sm text-gray-400 ml-1">/mês</span>
-          </div>
-          <div class="space-y-3 flex-1 mb-8">
-            <!-- incluídos -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Live Ticket | Atendimento Omnichannel</title>
+      <meta name="description" content="Plataforma de Atendimento Omnichannel - Live Ticket" />
+      <!-- Tailwind FIXO para GitHub Pages -->
+      <script>
+         tailwind = {
+           config: {
+             theme: {
+               extend: {
+                 colors: {
+                   primary: '#2563eb'
+                 }
+               }
+             }
+           }
+         }
+      </script>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+      <style>
+         html, body {
+         width: 100%;
+         overflow-x: hidden;
+         }
+      </style>
+   </head>
+   <body class="bg-white text-gray-900">
+      <!-- HEADER -->
+      <header class="bg-white border-b border-gray-200">
+         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">WhatsApp Oficial</span>
+               <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943198163901cb6155dbb1f/fede1158b_571129084_25350278831244050_8856712991463821764_n.png"
+                  class="h-12"
+                  alt="Live Ticket"
+                  />
+               <div>
+                  <h1 class="text-xl font-bold">Live Ticket</h1>
+                  <p class="text-xs text-gray-500">Atendimento Omnichannel</p>
+               </div>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Mensagens Rápidas</span>
+            <nav class="hidden md:flex gap-8">
+               <a href="#sobre" class="text-gray-600 hover:text-primary">Sobre</a>
+               <a href="#servicos" class="text-gray-600 hover:text-primary">Serviços</a>
+               <a href="#contato" class="text-gray-600 hover:text-primary">Contato</a>
+            </nav>
+         </div>
+      </header>
+      <!-- HERO -->
+      <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+         <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+               <h2 class="text-5xl font-bold mb-6 leading-tight">
+                  Plataforma de Atendimento Omnichannel
+               </h2>
+               <p class="text-lg text-gray-600 mb-8">
+                  Centralize WhatsApp, Instagram, Messenger, e-mail e outros canais em uma única plataforma.
+               </p>
+               <div class="flex flex-wrap gap-4">
+                  <a href="#contato" class="px-6 py-3 bg-primary text-white rounded-lg">
+                  Solicitar Demonstração
+                  </a>
+                  <a href="#servicos" class="px-6 py-3 border rounded-lg">
+                  Conhecer Serviços
+                  </a>
+               </div>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Tags</span>
+            <img
+               class="rounded-2xl shadow-2xl w-full"
+               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900"
+               alt="Atendimento Omnichannel"
+               />
+         </div>
+      </section>
+      <!-- SOBRE -->
+      <section id="sobre" class="py-20">
+         <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-4">Sobre a Live Ticket</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+               Empresa especializada em soluções modernas de atendimento ao cliente,
+               com foco em automação, performance e experiência omnichannel.
+               Os dados são utilizados exclusivamente para permitir a comunicação
+               entre empresas e seus próprios clientes.
+            </p>
+         </div>
+      </section>
+      <!-- SERVIÇOS -->
+      <section id="servicos" class="py-20 bg-gray-50">
+         <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12">Nossos Serviços</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+               <div class="bg-white p-8 rounded-xl shadow">
+                  Plataforma Omnichannel integrada à WhatsApp Business API
+               </div>
+               <div class="bg-white p-8 rounded-xl shadow">
+                  Fluxos Automatizados e Integrações
+               </div>
+               <div class="bg-white p-8 rounded-xl shadow">
+                  Gestão de equipe, SLA e distribuição automática de tickets
+               </div>
+               <div class="bg-white p-8 rounded-xl shadow">
+                  Relatórios e dashboards estratégicos em tempo real
+               </div>
             </div>
-            <!-- não incluídos -->
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">Chat Interno</span>
+         </div>
+      </section>
+      <!-- CONTATO -->
+      <section id="contato" class="py-20">
+         <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-4">Entre em Contato</h3>
+            <p class="text-gray-600 mb-8">
+               Estamos prontos para ajudar sua empresa a escalar o atendimento
+            </p>
+            <!-- EMAIL -->
+            <div class="mb-6">
+               <a
+                  href="mailto:NickSouzaoriginal@gmail.com"
+                  class="px-6 py-3 bg-primary text-white rounded-lg inline-block"
+                  >
+               NickSouzaoriginal@gmail.com
+               </a>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">Facebook</span>
+            <!-- ICONES DE CONTATO -->
+            <div class="flex justify-center gap-6 mt-6">
+               <!-- WHATSAPP -->
+               <a
+                  href="https://api.whatsapp.com/send/?phone=5548991650513&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp Live Ticket"
+                  class="inline-flex items-center justify-center"
+                  >
+               <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                  alt="WhatsApp"
+                  class="w-11 h-11 hover:scale-110 transition-transform"
+                  />
+               </a>
+               <!-- FACEBOOK -->
+               <a
+                  href="https://www.facebook.com/profile.php?id=61582944928432"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Live Ticket"
+                  class="inline-flex items-center justify-center"
+                  >
+               <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                  alt="Facebook"
+                  class="w-11 h-11 hover:scale-110 transition-transform"
+                  />
+               </a>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">Instagram</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">CRM</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">Agendamento de Mensagens</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-gray-300 line-through">Campanhas</span>
-            </div>
-          </div>
-          <a href__="https://api.whatsapp.com/send/?phone=5548991650513&text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Essencial" target="_blank"
-            class="block w-full text-center py-3.5 rounded-xl font-semibold text-sm bg-gray-100 text-gray-800 hover:bg-blue-600 hover:text-white transition-all">
-            Começar com Essencial
-          </a>
-        </div>
-
-        <!-- PLANO PROFISSIONAL (destaque) -->
-        <div class="relative rounded-2xl p-8 bg-gray-900 text-white shadow-2xl flex flex-col md:-mt-4 md:mb-4">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-            <span class="inline-flex items-center gap-1.5 px-4 py-1 bg-blue-600 text-white text-xs font-bold rounded-full shadow-lg">
-              ★ Mais Popular
-            </span>
-          </div>
-          <div class="mb-6">
-            <h4 class="text-lg font-bold mb-1 text-white">Profissional</h4>
-            <p class="text-sm text-gray-400 leading-relaxed">O mais completo para médias e pequenas empresas.</p>
-          </div>
-          <div class="mb-8">
-            <span class="text-4xl font-extrabold text-white">R$ 600</span>
-            <span class="text-sm text-gray-400 ml-1">/mês</span>
-          </div>
-          <div class="space-y-3 flex-1 mb-8">
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-white">WhatsApp Oficial</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-white">Mensagens Rápidas</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-white">Tags</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-white">Chat Interno</span>
-            </div>
-            <!-- não incluídos -->
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-white/30 line-through">Facebook</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-white/30 line-through">Instagram</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-white/30 line-through">CRM</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-white/30 line-through">Agendamento de Mensagens</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
-              </div>
-              <span class="text-sm text-white/30 line-through">Campanhas</span>
-            </div>
-          </div>
-          <a href__="https://api.whatsapp.com/send/?phone=5548991650513&text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Profissional" target="_blank"
-            class="block w-full text-center py-3.5 rounded-xl font-semibold text-sm bg-blue-600 text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/50">
-            Começar com Profissional
-          </a>
-        </div>
-
-        <!-- PLANO FULL -->
-        <div class="rounded-2xl p-8 border border-gray-200 bg-white hover:border-blue-200 hover:shadow-lg transition-all flex flex-col">
-          <div class="mb-6">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full mb-3">
-              ✦ Acesso Total
-            </div>
-            <h4 class="text-lg font-bold mb-1">Full</h4>
-            <p class="text-sm text-gray-500 leading-relaxed">Tudo que você precisa para escalar seu atendimento.</p>
-          </div>
-          <div class="mb-8">
-            <span class="text-4xl font-extrabold">R$ 800</span>
-            <span class="text-sm text-gray-400 ml-1">/mês</span>
-          </div>
-          <div class="space-y-3 flex-1 mb-8">
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Chat Interno</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">WhatsApp Oficial</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Facebook</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Instagram</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">CRM</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Agendamento de Mensagens</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Campanhas</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Mensagens Rápidas</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <span class="text-sm text-gray-800">Tags</span>
-            </div>
-          </div>
-          <a href__="https://api.whatsapp.com/send/?phone=5548991650513&text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Full" target="_blank"
-            class="block w-full text-center py-3.5 rounded-xl font-semibold text-sm bg-gray-100 text-gray-800 hover:bg-blue-600 hover:text-white transition-all">
-            Começar com Full
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" class="py-24 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <p class="text-blue-600 font-semibold text-sm mb-2 tracking-widest uppercase">Fale conosco</p>
-      <h3 class="text-3xl md:text-4xl font-bold mb-4">Entre em Contato</h3>
-      <p class="text-gray-500 mb-10">Estamos prontos para ajudar sua empresa a escalar o atendimento</p>
-      <a href__="mailto:NickSouzaoriginal@gmail.com"
-        class="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200 mb-10">
-        ✉ NickSouzaoriginal@gmail.com
-      </a>
-      <div class="flex justify-center gap-5 mt-6">
-        <a href__="https://api.whatsapp.com/send/?phone=5548991650513&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"
-          class="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center hover:border-blue-300 hover:shadow-md transition-all">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6" />
-        </a>
-        <a href__="https://www.facebook.com/profile.php?id=61582944928432" target="_blank" rel="noopener noreferrer"
-          class="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center hover:border-blue-300 hover:shadow-md transition-all">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-6 h-6" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-400 py-14">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
-        <div class="flex items-center gap-3">
-          <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943198163901cb6155dbb1f/fede1158b_571129084_25350278831244050_8856712991463821764_n.png"
-            class="h-9 brightness-0 invert" alt="Live Ticket" />
-          <span class="text-lg font-bold text-white">Live Ticket</span>
-        </div>
-        <div class="flex gap-6 text-sm">
-          <a href__="#sobre"    class="hover:text-white transition-colors">Sobre</a>
-          <a href__="#servicos" class="hover:text-white transition-colors">Serviços</a>
-          <a href__="#planos"   class="hover:text-white transition-colors">Planos</a>
-          <a href__="#contato"  class="hover:text-white transition-colors">Contato</a>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 pt-8 text-center space-y-1.5 text-sm">
-        <p class="font-semibold text-white">Live Ticket é uma plataforma de atendimento omnichannel desenvolvida por</p>
-        <p class="font-semibold text-white">Nick Souza da Silva – MEI</p>
-        <p>CNPJ: 64.083.873/0001-98</p>
-        <p>Email: <a href__="mailto:NickSouzaoriginal@gmail.com" class="underline hover:text-white">NickSouzaoriginal@gmail.com</a></p>
-        <p>Telefone: <a href__="tel:+5548991650513" class="underline hover:text-white">(48) 99165-0513</a></p>
-        <div class="flex flex-wrap justify-center gap-4 pt-4 text-xs">
-          <a href__="https://nicksouzadasilva.github.io/whatsapp/politica-de-privacidade/" rel="noopener noreferrer" class="hover:text-white underline">Política de Privacidade</a>
-          <a href__="https://nicksouzadasilva.github.io/whatsapp/termos-de-servico/" rel="noopener noreferrer" class="hover:text-white underline">Termos de Serviço</a>
-        </div>
-        <p class="text-gray-600 text-xs pt-4">© 2025 Live Ticket. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-</body>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer class="bg-gray-900 text-gray-300 py-10 text-center">
+         <p class="font-semibold">Live Ticket é uma plataforma de atendimento omnichannel desenvolvida por</p>
+         <p class="font-semibold">Nick Souza da Silva – MEI
+         <p>
+         <p>CNPJ: 64.083.873/0001-98</p>
+         <p class="mt-2">
+            Email:
+            <a href="mailto:NickSouzaoriginal@gmail.com" class="underline hover:text-white">
+            NickSouzaoriginal@gmail.com
+            </a>
+         </p>
+         <p>
+            Telefone:
+            <a href="tel:+5548991650513" class="underline hover:text-white">
+            (48) 99165-0513
+            </a>
+         </p>
+         <!-- LINKS LEGAIS -->
+         <div class="mt-4 text-sm flex flex-row items-center gap-4 justify-center">
+            <a
+               href="https://nicksouzadasilva.github.io/whatsapp/politica-de-privacidade/"
+               rel="noopener noreferrer"
+               class="hover:text-white underline"
+               >
+            Política de Privacidade
+            </a>
+            <a
+               href="https://nicksouzadasilva.github.io/whatsapp/termos-de-servico/"
+               rel="noopener noreferrer"
+               class="hover:text-white underline"
+               >
+            Termos de Serviço
+            </a>
+         </div>
+         <p class="text-sm text-gray-500 mt-4">© 2025 Live Ticket</p>
+      </footer>
+   </body>
 </html>
